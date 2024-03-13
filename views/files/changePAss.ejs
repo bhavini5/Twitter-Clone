@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+  
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d8bd9;
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 40rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 15rem;
+            height: 33rem;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1da1f2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #657786;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #1da1f2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d8bf0;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #1da1f2;
+        }
+    </style>
+</head>
+<body>
+   
+    
+    <div class="signup-container">
+        <h3 style="margin-left: 15rem;">Change Password</h3>
+        <% if (msg) { %>
+            <div class="error-message">
+                <%= msg %>
+            </div>
+        <% } %>
+        <br>
+        <form action="/<%= result[0].usname %>/pass_submit?_method=PATCH" method="POST">
+            <label for="firstName">Old Password:</label>
+            <input type="text" id="password" name="password" >
+
+            <label for="lastName">New Password:</label>
+            <input type="text" id="Npassword" name="Npassword" >
+
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+  
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            margin-right: -5rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1da1f2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #657786;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #1da1f2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d8bf0;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #1da1f2;
+        }
+    </style>
+</head>
+<body>
+    <%layout("/layouts/boilerplate") %>
+
+    <div class="signup-container">
+        <form action="/tweet_submit" method="post">
+            <h5><b><%=result[0].fname.toUpperCase()%> <%=result[0].lname.toUpperCase()%></b></h5>
+            <p><i><%= result[0].usname %></i></p>
+            <label for="emailOrMobile">Add Your Tweet</label>
+            <textarea id="about" name="about" rows="4" cols="30" placeholder="What's happening?"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Tweet Box UI Design | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1da1f2;
+  margin-left:-3rem;
+}
+::selection{
+  color: #fff;
+  background: #1da1f2;
+}
+.wrapper{
+  background: #fff;
+  max-width: 475px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 25px 25px 15px 25px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  margin-left: 8rem;
+}
+.input-box{
+  padding-top: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.input-box .tweet-area{
+  position: relative;
+  min-height: 130px;
+  max-height: 170px;
+  overflow-y: auto;
+}
+.tweet-area::-webkit-scrollbar{
+  width: 0px;
+}
+.tweet-area .placeholder{
+  position: absolute;
+  margin-top: -3px;
+  font-size: 22px;
+  background-color: white;
+  pointer-events: none;
+}
+.tweet-area .input{
+  outline: none;
+  font-size: 17px;
+  min-height: inherit;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.tweet-area .editable{
+  position: relative;
+  z-index: 5;
+}
+.tweet-area .readonly{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: transparent;
+  background: transparent;
+}
+.readonly .highlight{
+  background: #fd9bb0;
+}
+.input-box .privacy{
+  color: #1da1f2;
+  margin: 15px 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.privacy:hover, .icons li:hover{
+  background: #e7f5fe;
+}
+.privacy i{
+  font-size: 18px;
+}
+.privacy span{
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 7px;
+}
+.bottom{
+  display: flex;
+  margin-top: 13px;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom .icons{
+  display: inline-flex;
+}
+.icons li{
+  list-style: none;
+  color: #1da1f2;
+  font-size: 20px;
+  margin: 0 2px;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+.bottom .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom .counter{
+  color: #333;
+  display: none;
+  font-weight: 500;
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid #aab8c2;
+}
+.bottom button{
+  padding: 9px 18px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #1da1f2;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: background 0.2s ease;
+}
+
+.bottom button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+.bottom button:hover{
+  background: #0d8bd9;
+}
+.name{
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #1da1f2;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    margin-left: -14rem;
+    text-decoration: underline;
+
+}
+.usname{
+    font-size: 10px;
+    color: #657786;
+    margin-top: -0.5rem;
+}
+</style>
+<body>
+  <div class="wrapper">
+    <div class="input-box">
+        <form action="/<%= usname %>/tweet_submit" method="post" enctype="multipart/form-data">
+            <p class="name" ><b style="margin-left: -4rem;"><%=result[0].fname.toUpperCase()%> <%=result[0].lname.toUpperCase()%></b></p style="font-size: 20px;">
+            <p class="usname" > <i style="font-size: medium;"> <%= result[0].usname %></i></p>
+            <input type="file" name="tweet_img">
+            <!-- <label for="emailOrMobile">Add Your Tweet</label> -->
+            <textarea id="about" name="about" rows="4" cols="30" placeholder="What's happening?"></textarea>
+            <div    >
+                <input style=" background-color: #1da1f2;  height: 40px;
+                width: 68px;  cursor: pointer;  border-radius: 10px; color: white;"   type="submit" value="Submit">
+            </div>
+        </form>
+
+            <!-- <div class="bottom">
+              <button type="submit">Tweet</button>
+            </div> -->
+          </div>
+        </div>
+  </div>
+
+  <script>
+    const tweetInput = document.querySelector('.editable');
+    const placeholder = document.querySelector('.placeholder');
+
+    tweetInput.addEventListener('input', function() {
+      const text = this.innerText.trim();
+      if (text !== '') {
+        placeholder.style.display = 'none';
+      } else {
+        placeholder.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
